@@ -1,0 +1,40 @@
+@use "../abstracts/" as *;
+
+.topbar {
+  @include flex-center;
+  background-color: $color-secondary-medium;
+  border-bottom: $border-standard;
+  font-size: 0.9rem;
+  height: max-content;
+  padding: 0.5rem;
+  white-space: nowrap;
+  width: 100%;
+
+  // hide topbar on tablet and smaller screens
+  @include responsive(tablet) {
+    display: none;
+  }
+
+  &__address {
+    @include flex-center;
+    gap: 4rem;
+    color: $color-main;
+    width: 50%;
+
+    // phone & mail icons
+    svg {
+      fill: $color-main;
+      height: 1rem;
+      width: 1rem;
+    }
+
+    &--social-media-icons {
+      @include flex-center;
+      gap: 1rem;
+
+      svg {
+        @include small-svg-icons;
+      }
+    }
+  }
+}

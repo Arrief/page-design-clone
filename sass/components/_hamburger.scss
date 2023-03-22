@@ -1,0 +1,61 @@
+@use "../abstracts/" as *;
+
+.mobile-nav-btn {
+  @include flex-center;
+  cursor: pointer;
+  display: none;
+  position: relative;
+  transition: all 0.5s ease-in-out;
+  height: 1rem;
+  width: 2rem;
+
+  // only display hamburger button on tablet and smaller screens
+  @include responsive(tablet) {
+    display: block;
+  }
+
+  .burger {
+    background-color: $color-text-dark;
+    width: 100%;
+    height: 3px;
+    transition: all ease-in;
+    position: relative;
+
+    &::after,
+    &::before {
+      background-color: $color-text-dark;
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 3px;
+    }
+
+    &::after {
+      top: -8px;
+      transform: translateY(1rem);
+    }
+
+    &::before {
+      top: 8px;
+      transform: translateY(-1rem);
+    }
+  }
+
+  // class for opening & closing hamburger menu with JS
+  &.open {
+    .burger {
+      // make middle line disappear on click
+      background-color: transparent;
+
+      &::after {
+        top: 0;
+        transform: rotate(-45deg);
+      }
+
+      &::before {
+        top: 0;
+        transform: rotate(45deg);
+      }
+    }
+  }
+}

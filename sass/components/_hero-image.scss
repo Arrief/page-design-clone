@@ -1,0 +1,15 @@
+@use "../abstracts/" as *;
+
+.hero-img {
+  height: 55vh;
+  width: 100%;
+  background-image: url("images/Header_CDS_ipadiphone_klein.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  overflow: hidden;
+
+  @include responsive(phone) {
+    height: 30vh;
+  }
+}

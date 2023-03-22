@@ -1,0 +1,35 @@
+@use "../abstracts/" as *;
+
+.dropdown-produkte,
+.dropdown-unternehmen {
+  border: $border-standard;
+  display: none;
+  margin-top: 0.6rem;
+  padding: 0.5rem 0;
+  transition: all 0.5s;
+
+  li {
+    font-family: "Source Sans Pro", sans-serif;
+    text-transform: initial;
+
+    &:not(:last-child) {
+      border-bottom: $border-standard;
+    }
+
+    &.active-dropdown {
+      border-left: $border-colored;
+    }
+  }
+}
+
+// display dropdown menus when hovering over parent nav link or dropdown itself
+.dropdown-parent-1:hover > .dropdown-produkte,
+.dropdown-produkte:hover,
+.dropdown-parent-2:hover > .dropdown-unternehmen,
+.dropdown-unternehmen:hover {
+  animation: fadein 0.5s ease-in;
+  background-color: #fff;
+  display: block;
+  position: absolute;
+  top: 10;
+}

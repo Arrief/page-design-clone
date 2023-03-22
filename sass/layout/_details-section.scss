@@ -1,0 +1,75 @@
+@use "../abstracts/" as *;
+
+.details {
+  padding: 1.5rem;
+  width: 100%;
+
+  @include responsive(phone) {
+    padding: 1.5rem 1rem;
+  }
+
+  &__Buchungsmaske,
+  &__Selbstverwaltungsmenue {
+    @include flex-align-start-just-center;
+    gap: 1rem;
+    padding: 4rem 0;
+
+    @include responsive(tablet) {
+      flex-direction: column;
+    }
+
+    @include responsive(phone) {
+      @include flex-center;
+      flex-direction: column;
+      padding: 2rem 0;
+      width: 100%;
+    }
+
+    img {
+      width: 50%;
+
+      @include responsive(phone) {
+        width: 100%;
+      }
+    }
+  }
+
+  .details-text {
+    @include flex-align-start-just-center;
+    flex-direction: column;
+    text-align: left;
+    height: 100%;
+    width: 50%;
+
+    @include responsive(phone) {
+      width: 100%;
+    }
+
+    h2 {
+      text-align: left;
+      margin-bottom: 2rem;
+      width: 100%;
+
+      @include responsive(tablet) {
+        font-size: 1.5rem;
+      }
+
+      @include responsive(phone) {
+        font-size: 1rem;
+      }
+    }
+
+    li {
+      color: $color-text-dark;
+      line-height: 2rem;
+
+      // checkmark symbol HTML &check;
+      &::before {
+        content: "\2713";
+        display: inline;
+        font-size: 1.3rem;
+        margin-right: 0.3rem;
+      }
+    }
+  }
+}

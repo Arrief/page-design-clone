@@ -1,0 +1,59 @@
+@use "./variables" as *;
+
+@mixin flex-align-start-just-center {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+@mixin flex-sp-around {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flex-sp-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@mixin small-svg-icons {
+  fill: currentColor;
+  height: 1rem;
+  width: 1rem;
+
+  &:hover {
+    fill: $color-text-dark;
+  }
+}
+
+// media queries
+@mixin responsive($breakpoint) {
+  @if $breakpoint == laptop {
+    @media screen and (max-width: 1480px) {
+      @content;
+    }
+  }
+  @if $breakpoint == inbetween {
+    @media screen and (max-width: 1200px) {
+      @content;
+    }
+  }
+  @if $breakpoint == tablet {
+    @media screen and (max-width: 900px) {
+      @content;
+    }
+  }
+  @if $breakpoint == phone {
+    @media screen and (max-width: 600px) {
+      @content;
+    }
+  }
+}

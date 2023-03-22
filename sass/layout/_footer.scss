@@ -1,0 +1,56 @@
+@use "../abstracts/" as *;
+
+footer {
+  background-color: $color-main;
+  color: $color-text-light;
+  width: 100vw;
+
+  .footer-info {
+    @include flex-sp-around;
+    gap: 2rem;
+    border-top: 1px solid $color-text-light;
+    padding: 1.5rem;
+    width: 100%;
+
+    @include responsive(phone) {
+      flex-direction: column-reverse;
+      padding: 2rem;
+    }
+
+    &__legal-navigation {
+      ul {
+        @include flex-center;
+        gap: 1rem;
+
+        @include responsive(phone) {
+          flex-wrap: wrap;
+          font-size: 0.9rem;
+        }
+      }
+
+      // separation line on the left of each list item but not on first element
+      li:not(:first-child)::before {
+        content: "|";
+        display: inline-block;
+        margin-right: 1rem;
+      }
+
+      a {
+        color: inherit;
+
+        &:hover {
+          color: $color-text-dark;
+        }
+      }
+    }
+
+    &__social-media {
+      @include flex-center;
+      gap: 1rem;
+
+      svg {
+        @include small-svg-icons;
+      }
+    }
+  }
+}

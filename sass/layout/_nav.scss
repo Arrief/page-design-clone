@@ -1,0 +1,81 @@
+@use "../abstracts/" as *;
+
+header {
+  @include flex-center;
+  gap: 13rem;
+  background-color: #fff;
+  padding: 1rem 0;
+  width: 100%;
+
+  @include responsive(inbetween) {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  @include responsive(tablet) {
+    @include flex-sp-between;
+    flex-direction: row;
+    padding: 0.5rem 2rem;
+  }
+
+  img {
+    @include responsive(phone) {
+      height: 70%;
+      width: 70%;
+    }
+  }
+
+  nav > ul {
+    @include flex-sp-between;
+    gap: 1rem;
+
+    li {
+      color: $color-main;
+      font-family: "Montserrat", sans-serif;
+      font-weight: 400;
+      padding: 0.5rem;
+      text-transform: uppercase;
+      transition: 0.3s;
+
+      &.active {
+        border-bottom: $border-colored;
+      }
+
+      &:hover {
+        color: $color-secondary-dark;
+      }
+    }
+
+    // hide nav options on tablets and smaller screens, hamburger will be displayed instead
+    @include responsive(tablet) {
+      display: none;
+    }
+  }
+}
+
+.mobile-nav {
+  animation: fadein 0.5s ease-in;
+  background-color: #fff;
+  display: none;
+  position: absolute;
+  top: 10;
+  left: 0;
+  padding: 2rem 1rem;
+  width: 90%;
+  text-align: center;
+  margin: 0 1rem;
+  opacity: 0.9;
+
+  li:not(:last-child) {
+    margin-bottom: 1rem;
+  }
+
+  a {
+    color: $color-main;
+    font-size: 1.5rem;
+
+    &:hover {
+      color: $color-text-dark;
+    }
+  }
+}
