@@ -1,0 +1,18 @@
+{
+  "name": "softtech-design-clone",
+  "version": "1.0.0",
+  "description": "My clone version of: https://www.softtec.de/online-buchungssystem/",
+  "scripts": {
+    "build": "npx sass sass/main.scss style.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Arrief/softtech-design-clone.git"
+  },
+  "author": "Arne Rief",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Arrief/softtech-design-clone/issues"
+  },
+  "homepage": "https://github.com/Arrief/softtech-design-clone#readme"
+}
